@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Giappone 2026</title>
+<meta name="theme-color" content="#c8372d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Giappone">
+<style>
+:root{--bg:#faf7f2;--card:#fff;--tx:#1f1d1a;--mu:#7a746b;--ac:#c8372d;--ln:#ebe5da;--ok:#2f7d4f;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#161412;--card:#221f1c;--tx:#f3eee6;--mu:#a39b8f;--ac:#ef5a4f;--ln:#34302b;--ok:#5fc287;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#161412;--card:#221f1c;--tx:#f3eee6;--mu:#a39b8f;--ac:#ef5a4f;--ln:#34302b;--ok:#5fc287;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 -apple-system,system-ui,"Segoe UI",sans-serif}
+main{padding:16px 14px 96px;max-width:640px;margin:auto}
+h1{font-size:24px;margin:4px 0 2px}h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mu);margin:20px 0 8px}
+.sub{color:var(--mu);font-size:14px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:16px;padding:14px;margin:10px 0}
+.day{padding:0;overflow:hidden}.dh{display:flex;gap:12px;align-items:center;padding:14px;cursor:pointer}
+.dn{min-width:46px;text-align:center;background:var(--ac);color:#fff;border-radius:12px;padding:6px 0;font-weight:700;line-height:1.1}.dn small{display:block;font-size:10px;font-weight:600;opacity:.9}
+.dt{flex:1}.dt b{display:block}.dt span{font-size:13px;color:var(--mu)}
+.db{padding:0 14px 14px;border-top:1px solid var(--ln)}
+.it{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--ln)}.it:last-of-type{border:0}
+.it .in{flex:1;min-width:0}.it b{display:block}.it .ad{font-size:13px;color:var(--mu);overflow-wrap:anywhere}.it .nt{font-size:13px;margin-top:2px}
+.ic{border:0;background:var(--bg);color:var(--tx);border-radius:10px;min-width:40px;height:40px;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn{display:block;width:100%;border:0;border-radius:12px;padding:13px;font-size:16px;font-weight:600;background:var(--ac);color:#fff;margin-top:10px}
+.btn.g{background:var(--bg);color:var(--tx);border:1px solid var(--ln)}
+.hot{background:var(--bg);border-radius:10px;padding:8px 10px;font-size:14px;margin:10px 0 2px}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--ln);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:5}
+nav button{flex:1;border:0;background:none;color:var(--mu);font-size:11px;padding:6px 0;display:flex;flex-direction:column;align-items:center;gap:2px}nav button span{font-size:22px}nav button.on{color:var(--ac);font-weight:700}
+.sheet{position:fixed;inset:0;background:#0008;z-index:10;display:flex;align-items:flex-end}
+.sheet>div{background:var(--card);width:100%;max-width:640px;margin:auto;border-radius:20px 20px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));max-height:90%;overflow:auto}
+label{display:block;font-size:13px;color:var(--mu);margin:12px 0 4px}
+input,textarea,select{width:100%;font:inherit;padding:12px;border-radius:10px;border:1px solid var(--ln);background:var(--bg);color:var(--tx)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.th{background:var(--card);border:1px solid var(--ln);border-radius:14px;overflow:hidden;text-align:left;padding:0;color:var(--tx)}
+.th img,.th .pdf{width:100%;height:110px;object-fit:cover;display:flex;align-items:center;justify-content:center;font-size:38px;background:var(--bg)}.th p{margin:0;padding:8px 10px;font-size:13px;font-weight:600}.th p small{display:block;color:var(--mu);font-weight:400}
+.chk{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--ln)}.chk input{width:24px;height:24px;flex:none}.chk.d span{text-decoration:line-through;color:var(--mu)}
+.badge{font-size:12px;color:var(--mu);text-align:center;margin-top:18px}
+.empty{color:var(--mu);text-align:center;padding:22px 0;font-size:14px}
+.lt{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}.lt a{flex:none;background:var(--card);border:1px solid var(--ln);border-radius:20px;padding:8px 14px;font-size:14px;color:var(--tx);text-decoration:none}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav id="nav"></nav>
+<div id="modal"></div>
+<script>
+var Y="2026-11-";
+var DEF={days:[
+{d:15,c:"Partenza da Venezia",h:"",n:"Registrazione online per velocizzare l’ingresso in aeroporto.",i:[]},
+{d:16,c:"Tokyo · arrivo",h:"Premier Hotel Cabin Shinjuku (5 notti, colazione inclusa · 630 € da pagare il 12/11 · cancellazione gratuita fino al 15/11)",i:["Check-in hotel","Pranzo","Giro per Shibuya"]},
+{d:17,c:"Tokyo",h:"Premier Hotel Cabin Shinjuku",i:["Asakusa","Odaiba"]},
+{d:18,c:"Tokyo",h:"Premier Hotel Cabin Shinjuku",i:["Akihabara","Ueno","Ginza"]},
+{d:19,c:"Tokyo",h:"Premier Hotel Cabin Shinjuku",i:["Harajuku","Shinjuku"]},
+{d:20,c:"Tokyo · Kamakura",h:"Premier Hotel Cabin Shinjuku",i:["Gita a Kamakura"]},
+{d:21,c:"Tokyo → Kanazawa",h:"Hotel a Kanazawa (147,19 €, bagno in comune, no colazione)",n:"Treno ore 11:24 (3 h), 94 € a testa. Spedizione bagagli: chiedere in reception.",i:[]},
+{d:22,c:"Shirakawa-go → Takayama",h:"Hotel Wood Takayama (145,25 €, bagno in comune, no colazione)",n:"Bus per Shirakawa-go 12–16 € (1h15), poi bus per Takayama 16–18 € (1 h).",i:["Shirakawa-go","Takayama"]},
+{d:23,c:"Takayama → Kyoto",h:"Hotel M’s Plus Shijo Omiya (357 € · documento con foto e stesso nome dell’ospite)",n:"Treno 65–80 € (3 h).",i:["Kiyomizu-dera","Passeggiata Higashiyama","Yasaka Pagoda","Gion al tramonto"]},
+{d:24,c:"Kyoto",h:"Hotel M’s Plus Shijo Omiya",i:["Fushimi Inari Taisha","Nishiki Market","Teramachi / Kawaramachi","Pontocho"]},
+{d:25,c:"Kyoto",h:"Hotel M’s Plus Shijo Omiya",i:["Bamboo Grove (Arashiyama)","Kinkaku-ji (Padiglione d’Oro)"]},
+{d:26,c:"Nara e Osaka",h:"Hotel M’s Plus Shijo Omiya",i:["Nara","Osaka"]},
+{d:27,c:"Hiroshima → Miyajima",h:"Grandvrio Hotel Miyajima Wakura (161,07 €, colazione inclusa)",n:"Treno 80 € (1h30–2h). Per Miyajima: treno 3 € + traghetto 1,5 €, oppure solo traghetto 15–18 €.",i:["Hiroshima","Miyajima"]},
+{d:28,c:"Miyajima → Tokyo",h:"Hotel Mystays Kanda (134,49 €, 2 notti, no colazione)",n:"Treno 120 € (4 h).",i:[]},
+{d:29,c:"Tokyo",h:"Hotel Mystays Kanda",i:[]},
+{d:30,c:"Volo di ritorno",h:"",i:[]}
+],todo:["Assicurazione di viaggio","Carta Suica","E-sim","Registrazione per ingresso veloce in aeroporto","Prenotare i treni (da 30 giorni prima)"]};
+var APPS=[["Klook","treni ed esperienze","https://www.klook.com"],["Tabelog","recensioni ristoranti","https://tabelog.com/en/"],["Kuli Kuli","traduzione menù",""],["GO Taxi","come Uber",""]];
+var DOW=["dom","lun","mar","mer","gio","ven","sab"];
+function seed(){var s={days:[],docs:[],todo:[]};DEF.days.forEach(function(x,k){s.days.push({id:"g"+x.d,date:Y+x.d,city:x.c,hotel:x.h,note:x.n||"",items:x.i.map(function(n,j){return{id:"p"+x.d+"_"+j,name:n,addr:"",note:""}})})});s.todo=DEF.todo.map(function(t,k){return{id:"t"+k,t:t,done:false}});return s}
+var S=null,tab="oggi",open={},U={};
+try{S=JSON.parse(localStorage.getItem("jp26"))}catch(e){}
+if(!S||!S.days)S=seed();
+function uid(){return Math.random().toString(36).slice(2,9)}
+function esc(t){var d=document.createElement("div");d.textContent=t==null?"":t;return d.innerHTML}
+function persist(){try{localStorage.setItem("jp26",JSON.stringify(S))}catch(e){alert("Spazio esaurito sul telefono")}}
+function mapUrl(p,c){return"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent((p.addr||p.name)+(p.addr?"":" "+(c||"")+" Japan"))}
+function dayLabel(g){var dt=new Date(g.date+"T12:00:00");return'<div class="dn"><small>'+DOW[dt.getDay()]+'</small>'+dt.getDate()+'<small>nov</small></div>'}
+function todayDay(){var t=new Date(),k=t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0");
+ var f=S.days.filter(function(g){return g.date===k})[0];return f?{g:f,live:true}:{g:S.days[0],live:false}}
+function items(g){return g.items.length?g.items.map(function(p){return'<div class="it"><div class="in"><b>'+esc(p.name)+'</b>'+(p.addr?'<div class="ad">'+esc(p.addr)+'</div>':'')+(p.note?'<div class="nt">'+esc(p.note)+'</div>':'')+'</div><a class="ic" target="_blank" rel="noopener" href="'+mapUrl(p,g.city)+'" aria-label="Mappa">📍</a><button class="ic" onclick="editItem(\''+g.id+'\',\''+p.id+'\')" aria-label="Modifica">✏️</button></div>'}).join(""):'<div class="empty">Nessun luogo ancora</div>'}
+function dayBody(g){return(g.hotel?'<div class="hot">🏨 '+esc(g.hotel)+'</div>':'')+(g.note?'<div class="hot">🚆 '+esc(g.note)+'</div>':'')+items(g)+'<button class="btn" onclick="editItem(\''+g.id+'\')">＋ Aggiungi luogo</button><button class="btn g" onclick="editDay(\''+g.id+'\')">Modifica giornata</button>'+docsOf(g.id)}
+function docsOf(id){var d=S.docs.filter(function(x){return x.day===id});return d.length?'<h2>Documenti del giorno</h2><div class="grid">'+d.map(thumb).join("")+'</div>':''}
+function thumb(d){var im=/^image/.test(d.type);return'<button class="th" onclick="viewDoc(\''+d.id+'\')">'+(im?'<img loading="lazy" src="'+(U[d.id]||'')+'" alt="">':'<div class="pdf">📄</div>')+'<p>'+esc(d.title)+'<small>'+esc(dl(d.day))+'</small></p></button>'}
+function dl(id){var g=S.days.filter(function(x){return x.id===id})[0];return g?g.date.slice(8)+" nov · "+g.city:"Generale"}
+function render(){var h="";
+ if(tab==="oggi"){var t=todayDay(),g=t.g;h='<h1>🗾 Giappone 2026</h1><div class="sub">'+(t.live?"Oggi":"Il viaggio inizia il 15 novembre")+'</div><div class="card"><div class="dh" style="padding:0">'+dayLabel(g)+'<div class="dt"><b>'+esc(g.city)+'</b></div></div>'+dayBody(g)+'</div>'}
+ if(tab==="giorni"){h='<h1>Itinerario</h1><div class="sub">Tocca un giorno per aprirlo</div>'+S.days.map(function(g){var o=open[g.id];return'<div class="card day"><div class="dh" onclick="tg(\''+g.id+'\')">'+dayLabel(g)+'<div class="dt"><b>'+esc(g.city)+'</b><span>'+g.items.length+' luoghi'+(g.hotel?' · '+esc(g.hotel.split(" (")[0]):'')+'</span></div><span>'+(o?"▾":"▸")+'</span></div>'+(o?'<div class="db">'+dayBody(g)+'</div>':'')+'</div>'}).join("")}
+ if(tab==="doc"){h='<h1>Documenti</h1><div class="sub">Biglietti, prenotazioni, foto</div><button class="btn" onclick="addDoc()">＋ Aggiungi foto o PDF</button>'+(S.docs.length?'<h2>Tutti</h2><div class="grid">'+S.docs.map(thumb).join("")+'</div>':'<div class="empty">Carica qui biglietti del treno, bus, prenotazioni hotel.</div>')}
+ if(tab==="info"){h='<h1>Prima di partire</h1><div class="card">'+S.todo.map(function(x){return'<label class="chk '+(x.done?"d":"")+'"><input type="checkbox" '+(x.done?"checked":"")+' onchange="ck(\''+x.id+'\')"><span>'+esc(x.t)+'</span></label>'}).join("")+'</div><button class="btn g" onclick="addTodo()">＋ Aggiungi voce</button><h2>App utili</h2><div class="card">'+APPS.map(function(a){return'<div class="it"><div class="in"><b>'+a[0]+'</b><div class="ad">'+a[1]+'</div></div>'+(a[2]?'<a class="ic" target="_blank" rel="noopener" href="'+a[2]+'">↗</a>':'')+'</div>'}).join("")+'</div><h2>Backup</h2><button class="btn g" onclick="expJ()">Esporta itinerario</button><button class="btn g" onclick="imp.click()">Importa itinerario</button><input id="imp" type="file" accept="application/json" hidden onchange="impJ(this)"><div class="badge">📴 Dati e file salvati solo su questo telefono</div>'}
+ document.getElementById("app").innerHTML=h;
+ var T=[["oggi","📍","Oggi"],["giorni","🗓️","Giorni"],["doc","🎫","Documenti"],["info","✅","Info"]];
+ document.getElementById("nav").innerHTML=T.map(function(x){return'<button class="'+(tab===x[0]?"on":"")+'" onclick="go(\''+x[0]+'\')"><span>'+x[1]+'</span>'+x[2]+'</button>'}).join("")}
+function go(t){tab=t;render();window.scrollTo(0,0)}
+function tg(id){open[id]=!open[id];render()}
+function ck(id){var x=S.todo.filter(function(a){return a.id===id})[0];x.done=!x.done;persist();render()}
+function sheet(html){var m=document.getElementById("modal");m.innerHTML='<div class="sheet" onclick="if(event.target===this)closeS()"><div>'+html+'</div></div>'}
+function closeS(){document.getElementById("modal").innerHTML=""}
+function G(id){return S.days.filter(function(g){return g.id===id})[0]}
+function editItem(gid,pid){var g=G(gid),p=pid?g.items.filter(function(x){return x.id===pid})[0]:{name:"",addr:"",note:""};
+ sheet('<h1 style="font-size:20px">'+(pid?"Modifica luogo":"Nuovo luogo")+'</h1><label>Nome</label><input id="f1" value="'+esc(p.name).replace(/"/g,"&quot;")+'"><label>Indirizzo (per la mappa)</label><input id="f2" value="'+esc(p.addr).replace(/"/g,"&quot;")+'" placeholder="es. 2-3-1 Asakusa, Taito City, Tokyo"><label>Note</label><textarea id="f3" rows="3">'+esc(p.note)+'</textarea><button class="btn" onclick="saveItem(\''+gid+'\',\''+(pid||"")+'\')">Salva</button>'+(pid?'<button class="btn g" onclick="delItem(\''+gid+'\',\''+pid+'\')">Elimina</button>':'')+'<button class="btn g" onclick="closeS()">Annulla</button>')}
+function saveItem(gid,pid){var n=f1.value.trim();if(!n){f1.focus();return}var g=G(gid);
+ if(pid){var p=g.items.filter(function(x){return x.id===pid})[0];p.name=n;p.addr=f2.value.trim();p.note=f3.value.trim()}else g.items.push({id:uid(),name:n,addr:f2.value.trim(),note:f3.value.trim()});
+ open[gid]=true;persist();closeS();render()}
+function delItem(gid,pid){if(!confirm("Eliminare questo luogo?"))return;var g=G(gid);g.items=g.items.filter(function(x){return x.id!==pid});persist();closeS();render()}
+function editDay(gid){var g=G(gid);sheet('<h1 style="font-size:20px">Giornata</h1><label>Titolo / città</label><input id="f1" value="'+esc(g.city).replace(/"/g,"&quot;")+'"><label>Hotel</label><textarea id="f2" rows="2">'+esc(g.hotel)+'</textarea><label>Treni, bus, note</label><textarea id="f3" rows="3">'+esc(g.note)+'</textarea><button class="btn" onclick="saveDay(\''+gid+'\')">Salva</button><button class="btn g" onclick="closeS()">Annulla</button>')}
+function saveDay(gid){var g=G(gid);g.city=f1.value.trim()||g.city;g.hotel=f2.value.trim();g.note=f3.value.trim();persist();closeS();render()}
+function addTodo(){var t=prompt("Nuova voce");if(t&&t.trim()){S.todo.push({id:uid(),t:t.trim(),done:false});persist();render()}}
+function addDoc(){var opts=S.days.map(function(g){return'<option value="'+g.id+'">'+g.date.slice(8)+' nov · '+esc(g.city)+'</option>'}).join("");
+ sheet('<h1 style="font-size:20px">Nuovo documento</h1><label>Titolo</label><input id="f1" placeholder="es. Biglietto Shinkansen Tokyo–Kanazawa"><label>Giorno</label><select id="f2"><option value="">Generale</option>'+opts+'</select><label>File (foto o PDF)</label><input id="f4" type="file" accept="image/*,application/pdf"><button class="btn" id="up" onclick="upDoc()">Carica</button><button class="btn g" onclick="closeS()">Annulla</button>')}
+function upDoc(){var f=f4.files[0];if(!f){alert("Scegli un file");return}var b=document.getElementById("up");b.textContent="Caricamento…";b.disabled=true;
+ var id=uid();idbPut(id,f).then(function(){U[id]=URL.createObjectURL(f);S.docs.push({id:id,title:f1.value.trim()||f.name,day:f2.value,type:f.type});persist();closeS();render()}).catch(function(e){b.textContent="Carica";b.disabled=false;alert("Errore nel salvataggio, riprova")})}
+function viewDoc(id){var d=S.docs.filter(function(x){return x.id===id})[0];
+ sheet('<h1 style="font-size:20px">'+esc(d.title)+'</h1><div class="sub">'+esc(dl(d.day))+'</div>'+(/^image/.test(d.type)?'<img src="'+(U[d.id]||'')+'" style="width:100%;border-radius:12px;margin-top:12px" alt="">':'<iframe src="'+(U[d.id]||'')+'" style="width:100%;height:60vh;border:0;margin-top:12px;border-radius:12px"></iframe>')+'<a class="btn" style="text-align:center;text-decoration:none" target="_blank" rel="noopener" href="'+(U[d.id]||'')+'">Apri a schermo intero</a><button class="btn g" onclick="delDoc(\''+id+'\')">Elimina</button><button class="btn g" onclick="closeS()">Chiudi</button>')}
+function delDoc(id){if(!confirm("Eliminare il documento?"))return;S.docs=S.docs.filter(function(x){return x.id!==id});idbDel(id);delete U[id];persist();closeS();render()}
+function expJ(){var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify({days:S.days,todo:S.todo})],{type:"application/json"}));a.download="giappone-backup.json";a.click()}
+function impJ(i){var f=i.files[0];if(!f)return;f.text().then(function(t){var x=JSON.parse(t);if(!x.days)throw 0;if(!confirm("Sostituire l’itinerario attuale?"))return;S.days=x.days;S.todo=x.todo||S.todo;persist();render()}).catch(function(){alert("File non valido")})}
+var DB=null;
+function idb(){return DB||(DB=new Promise(function(res,rej){var r=indexedDB.open("jp26",1);r.onupgradeneeded=function(){r.result.createObjectStore("f")};r.onsuccess=function(){res(r.result)};r.onerror=function(){rej(r.error)}}))}
+function idbPut(k,v){return idb().then(function(d){return new Promise(function(res,rej){var t=d.transaction("f","readwrite");t.objectStore("f").put(v,k);t.oncomplete=res;t.onerror=function(){rej(t.error)}})})}
+function idbDel(k){idb().then(function(d){d.transaction("f","readwrite").objectStore("f").delete(k)})}
+function idbAll(){return idb().then(function(d){return new Promise(function(res){var o={},c=d.transaction("f").objectStore("f").openCursor();c.onsuccess=function(){var x=c.result;if(x){o[x.key]=x.value;x.continue()}else res(o)};c.onerror=function(){res(o)}})})}
+render();
+idbAll().then(function(o){for(var k in o)U[k]=URL.createObjectURL(o[k]);render()}).catch(function(){});
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
+</script>
+</body>
+</html>
